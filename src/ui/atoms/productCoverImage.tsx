@@ -7,7 +7,7 @@ type ProductCoverImageProps = {
 
 const ProductCoverImage = ({ src, alt }: ProductCoverImageProps) => {
 	return (
-		<div className="aspect-square overflow-hidden rounded-md border bg-slate-50 hover:bg-slate-100">
+		<div className="mb-2 aspect-square overflow-hidden rounded-md border bg-slate-50 p-4 hover:bg-slate-100">
 			<img
 				width={320}
 				height={320}

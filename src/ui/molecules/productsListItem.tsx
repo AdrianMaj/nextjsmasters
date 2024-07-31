@@ -15,7 +15,7 @@ type ProductsListItemProps = {
 
 export const ProductsListItem = ({ product }: ProductsListItemProps) => {
 	return (
-		<li>
+		<li className="flex flex-col">
 			<article>
 				<ProductCoverImage {...product.coverImage} />
 				<ProductDescription product={product} />
