@@ -44,9 +44,36 @@ const products = [
 	},
 ];
 
+// const res = await fetch("http://localhost:1337/api/products?populate=*", {
+// 	method: "GET",
+// 	headers: {
+// 		"Content-Type": "application/json",
+// 		Authorization: `bearer ${process.env.STRAPI_KEY}`,
+// 	},
+// });
+
+// const data = await res.json();
+// console.log(data.data);
+// const products: {
+// 	id: number;
+// 	attributes: {
+// 		title: string;
+// 		createdAt: string;
+// 		updatedAt: string;
+// 		publishedAt: string;
+// 		price: number;
+// 		category: string;
+// 		test: string;
+// 		coverImage: {
+// 			src: string;
+// 			alt: string;
+// 		};
+// 	};
+// }[] = data.data;
+
 const ProductsList = () => {
 	return (
-		<ul data-testid="products-list" className="flex h-dvh flex-wrap items-center justify-center gap-8">
+		<ul className="lg: my-8 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 			{products.map((product) => (
 				<ProductsListItem key={product.id} product={product} />
 			))}
