@@ -12,7 +12,7 @@ const ProductCoverImage = ({ src, alt }: ProductCoverImageProps) => {
 				width={320}
 				height={320}
 				className="h-full w-full object-cover object-center p-4 transition-transform duration-300 hover:scale-105"
-				src={src}
+				src={`http://localhost:1337${src}`}
 				alt={alt}
 			/>
 		</div>
