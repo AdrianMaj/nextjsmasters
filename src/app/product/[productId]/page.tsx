@@ -1,19 +1,23 @@
-import React from "react";
+import { getProductById } from "@/api/getProducts";
+import ProductCoverImage from "@/ui/atoms/productCoverImage";
+import { ProductDescription } from "@/ui/atoms/productDescription";
+import SuggestedProductsList from "@/ui/components/suggestedProductsList";
+import React, { Suspense } from "react";
 
-const SingleProductPage = async ({
-	params,
-	searchParams,
-}: {
-	params: { productId: string };
-	searchParams: { [key: string]: string | string[] };
-}) => {
-	const refferal = searchParams.refferal.toString();
+const SingleProductPage = async ({ params }: { params: { productId: string } }) => {
+	const product = await getProductById(params.productId);
 	return (
-		<div>
-			<h1>SingleProductPage</h1>
-			<p>{params.productId}</p>
-			<p>{refferal}</p>
-		</div>
+		<>
+			<article className="max-w-xs">
+				<ProductCoverImage {...product.coverImage} />
+				<ProductDescription product={product} />
+			</article>
+			<aside>
+				<Suspense fallback={"Ładowanie..."}>
+					<SuggestedProductsList />
+				</Suspense>
+			</aside>
+		</>
 	);
 };
 

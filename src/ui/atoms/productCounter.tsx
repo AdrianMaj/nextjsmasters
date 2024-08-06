@@ -1,7 +1,6 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
-import TestServer from "./testServer";
 
 const ProductCounter = ({ children }: { children: ReactNode }) => {
 	const [counter, setCounter] = useState(0);

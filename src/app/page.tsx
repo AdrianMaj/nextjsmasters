@@ -1,16 +1,7 @@
-import ProductCounter from "@/ui/atoms/productCounter";
-import TestServer from "@/ui/atoms/testServer";
-import ProductsList from "@/ui/components/productsList";
-import Link from "next/link";
+import React from "react";
 
-export default function Home() {
-	return (
-		<>
-			<Link href="/polityka-prywatnosci">Przejdź do polityki</Link>
-			<ProductsList />
-			<ProductCounter>
-				<TestServer />
-			</ProductCounter>
-		</>
-	);
-}
+const HomePage = () => {
+	return <div>HomePage</div>;
+};
+
+export default HomePage;
